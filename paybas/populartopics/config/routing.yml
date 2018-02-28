@@ -1,0 +1,4 @@
+# special page
+paybas_populartopics_00:
+    path: /pt
+    defaults: { _controller: paybas.populartopics.controller.page_controller:display}

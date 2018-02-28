@@ -1,0 +1,18 @@
+{% if POPULAR_TOPICS_DISPLAY and popular_topics_included neq true %}
+<!-- DEFINE popular_topics_included = true -->
+{% if S_LOCATION_TOP %}
+
+<div id="populartopicstop">
+{% INCLUDE 'popular_topics_bodybottom.html' %}
+</div>
+
+{% elseif S_LOCATION_SIDE %}
+
+<div id="phpbbsection">
+<div class="index-right">
+{% INCLUDE 'popular_topics_body.html' %}
+</div>
+<div class="index-left">
+{% endif %}
+
+{% endif %}

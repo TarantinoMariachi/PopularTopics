@@ -1,0 +1,56 @@
+services:
+    paybas.populartopics.controller.page_controller:
+        class: paybas\populartopics\controller\page_controller
+        arguments:
+            - '@config'
+            - '@controller.helper'
+            - '@auth'
+            - '@template'
+            - '@dbal.conn'
+            - '@request'
+            - '@user'
+            - '@pagination'
+            - '%core.php_ext%'
+            - '@path_helper'
+            - '@ext.manager'
+            - '%core.root_path%'
+            - '@paybas.populartopics.functions'
+            - '@language'
+    paybas.populartopics.functions:
+        class: paybas\populartopics\core\populartopics
+        arguments:
+            - '@auth'
+            - '@cache'
+            - '@config'
+            - '@language'
+            - '@content.visibility'
+            - '@dbal.conn'
+            - '@dispatcher'
+            - '@pagination'
+            - '@request'
+            - '@template'
+            - '@user'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+            - '@?part3.topicprefixes.functions'
+            - '@?prefixed.manager'
+            - '@?phpbb.collapsiblecategories.operator'
+    paybas.populartopics.listener:
+        class: paybas\populartopics\event\listener
+        arguments:
+            - '@paybas.populartopics.functions'
+            - '@config'
+            - '@request'
+        tags:
+            - { name: event.listener }
+    paybas.populartopics.ucp_listener:
+        class: paybas\populartopics\event\ucp_listener
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@request'
+            - '@template'
+            - '@user'
+            - '@language'
+        tags:
+            - { name: event.listener }

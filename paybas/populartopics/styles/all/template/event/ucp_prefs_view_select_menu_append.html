@@ -1,0 +1,49 @@
+{% if S_PT_SHOW %}
+	<hr />
+	{% if A_PT_ENABLE %}
+	<dl>
+		<dt><label for="pt_enable1">{{ lang('PT_ENABLE') }}{{ lang('COLON') }}</label></dt>
+		<dd>
+			<label for="pt_enable1"><input type="radio" name="pt_enable" id="pt_enable1" value="1"{% if S_PT_ENABLE %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+			<label for="pt_enable0"><input type="radio" name="pt_enable" id="pt_enable0" value="0"{% if not S_PT_ENABLE %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+		</dd>
+	</dl>
+	{% endif %}
+	{% if A_PT_LOCATION %}
+	<dl>
+		<dt><label for="pt_location">{{ lang('PT_LOCATION') }}{{ lang('COLON') }}</label><br /><span>{{ lang('PT_LOCATION_EXP') }}</span></dt>
+		<dd>
+			<select name="pt_location" class="input" id="pt_location">
+				{% for location_row in loops.location_row %}
+				<option value="{{ location_row.VALUE }}"{{ location_row.SELECTED }}>{{ location_row.OPTION }}</option>
+				{% endfor %}
+			</select>
+		</dd>
+	</dl>
+	{% endif %}
+	{% if A_PT_NUMBER %}
+	<dl>
+		<dt><label for="pt_number">{{ lang('PT_NUMBER') }}{{ lang('COLON') }}</label><br /><span>{{ lang('PT_NUMBER_EXP') }}</span></dt>
+		<dd><input type="number" id="pt_number" name="pt_number" size="3" min="0" max="999" value="{{ PT_NUMBER }}" /></dd>
+	</dl>
+	{% endif %}
+
+	{% if A_PT_SORT_START_TIME %}
+	<dl>
+		<dt><label for="pt_sort_start_time0">{{ lang('PT_SORT_START_TIME') }}{{ lang('COLON') }}</label><br /><span>{{ lang('PT_SORT_START_TIME_EXP') }}</dt>
+		<dd>
+			<label for="pt_sort_start_time1"><input type="radio" name="pt_sort_start_time" id="pt_sort_start_time1" value="1"{% if S_PT_SORT_START_TIME %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+			<label for="pt_sort_start_time0"><input type="radio" name="pt_sort_start_time" id="pt_sort_start_time0" value="0"{% if not S_PT_SORT_START_TIME %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+		</dd>
+	</dl>
+	{% endif %}
+	{% if A_PT_UNREAD_ONLY %}
+	<dl>
+		<dt><label for="pt_unread_only0">{{ lang('PT_UNREAD_ONLY') }}{{ lang('COLON') }}</label></dt>
+		<dd>
+			<label for="pt_unread_only1"><input type="radio" name="pt_unread_only" id="pt_unread_only1" value="1"{% if S_PT_UNREAD_ONLY %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+			<label for="pt_unread_only0"><input type="radio" name="pt_unread_only" id="pt_unread_only0" value="0"{% if not S_PT_UNREAD_ONLY %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+		</dd>
+	</dl>
+	{% endif %}
+{% endif %}

@@ -1,0 +1,7 @@
+<dl>
+	<dt><label for="forum_popular_topics">{{ lang('POPULAR_TOPICS_LIST') }}{{ lang('COLON') }}</label><br /><span>{{ lang('POPULAR_TOPICS_LIST_EXPLAIN') }}</span></dt>
+	<dd>
+		<label><input type="radio" class="radio" name="forum_popular_topics" value="1" id="forum_popular_topics"{% if POPULAR_TOPICS %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+		<label><input type="radio" class="radio" name="forum_popular_topics" value="0"{% if not POPULAR_TOPICS %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+	</dd>
+</dl>

@@ -1,0 +1,45 @@
+{
+    "name": "paybas/populartopics",
+    "type": "phpbb-extension",
+    "description": "Popular topics Extension for phpBB3.2. Adds a list with a number of popular topics to the index.php",
+    "version": "2.2.7",
+    "time": "2018-02-25",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "PayBas",
+            "role": "Previous Developer"
+        },
+        {
+            "name": "nickvergessen",
+            "role": "Previous Developer"
+        },
+        {
+            "name": "Andreas Vandenberghe",
+            "role": "Previous Developer"
+        },
+        {
+            "name": "Leinad4Mind",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "composer/installers": "~1.0.0",
+        "phpbb/phpbb": ">=3.2.0"
+    },
+    "require-dev": {
+        "phpbb/epv": "dev-master"
+    },
+    "extra": {
+        "display-name": "Popular Topics",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.2.0"
+        },
+        "version-check": {
+            "host": "www.avathar.be",
+            "directory": "/versioncheck",
+            "filename": "recenttopics22.json"
+        }
+    }
+}
